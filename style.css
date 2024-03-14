@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  background: url(background.jpg);
+}
