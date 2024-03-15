@@ -554,6 +554,80 @@ document.querySelectorAll(".box").forEach((item) => {
 
         item.style.backgroundColor = "blue";
       }
+
+      // ROOK
+
+      if (item.innerText == `${toggle}rook`) {
+        for (let i = 1; i < 9; i++) {
+          if (
+            a + i * 100 < 900 &&
+            document.getElementById(`b${a + i * 100}`).innerText == 0
+          ) {
+            document.getElementById(`b${a + i * 100}`).style.backgroundColor =
+              "greenyellow";
+          } else if (
+            a + i * 100 < 900 &&
+            document.getElementById(`b${a + i * 100}`).innerText !== 0
+          ) {
+            document.getElementById(`b${a + i * 100}`).style.backgroundColor =
+              "greenyellow";
+            break;
+          }
+        }
+
+        for (let i = 1; i < 9; i++) {
+          if (
+            a - i * 100 > 100 &&
+            document.getElementById(`b${a - i * 100}`).innerText == 0
+          ) {
+            document.getElementById(`b${a - i * 100}`).style.backgroundColor =
+              "greenyellow";
+          } else if (
+            a - i * 100 > 100 &&
+            document.getElementById(`b${a - i * 100}`).innerText !== 0
+          ) {
+            document.getElementById(`b${a - i * 100}`).style.backgroundColor =
+              "greenyellow";
+            break;
+          }
+        }
+
+        for (let i = 1; i < 9; i++) {
+          if (
+            a + i < aup + 9 &&
+            document.getElementById(`b${a + i}`).innerText == 0
+          ) {
+            document.getElementById(`b${a + i}`).style.backgroundColor =
+              "greenyellow";
+          } else if (
+            a + i < aup + 9 &&
+            document.getElementById(`b${a + i}`).innerText !== 0
+          ) {
+            document.getElementById(`b${a + i}`).style.backgroundColor =
+              "greenyellow";
+            break;
+          }
+        }
+
+        for (let i = 1; i < 9; i++) {
+          if (
+            a - i > aup &&
+            document.getElementById(`b${a - i}`).innerText == 0
+          ) {
+            document.getElementById(`b${a - i}`).style.backgroundColor =
+              "greenyellow";
+          } else if (
+            a - i > aup &&
+            document.getElementById(`b${a - i}`).innerText !== 0
+          ) {
+            document.getElementById(`b${a - i}`).style.backgroundColor =
+              "greenyellow";
+            break;
+          }
+        }
+
+        item.style.backgroundColor = "blue";
+      }
     }
 
     // Toggling the turn
@@ -591,6 +665,17 @@ document.querySelectorAll(".box").forEach((hathiTest) => {
           }
         });
       });
+    }
+  });
+});
+
+// Prvents from selecting multiple elements
+z = 0;
+document.querySelectorAll(".box").forEach((ee) => {
+  ee.addEventListener("click", function () {
+    z = z + 1;
+    if (z % 2 == 0 && ee.style.backgroundColor !== "greenyellow") {
+      coloring();
     }
   });
 });
