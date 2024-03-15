@@ -675,7 +675,7 @@ document.querySelectorAll(".box").forEach((ee) => {
   ee.addEventListener("click", function () {
     z = z + 1;
     if (z % 2 == 0 && ee.style.backgroundColor !== "greenyellow") {
-      coloring();
+      Coloring();
     }
   });
 });
